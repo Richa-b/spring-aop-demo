@@ -11,7 +11,7 @@ public class SpringAOPMain {
     public static void main(String[] args) throws IOException {
         ApplicationContext context = new AnnotationConfigApplicationContext(AOPConfig.class);
         UserService userService = context.getBean(UserService.class);
-        userService.addUser();
+        userService.addUser(new User());
         userService.deleteUser();
         userService.getUser();
         userService.methodWIthAnnotation();

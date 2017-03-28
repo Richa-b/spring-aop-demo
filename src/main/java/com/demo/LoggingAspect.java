@@ -48,5 +48,11 @@ public class LoggingAspect {
 
     }
 
+    @Before("execution(* com.demo.UserService.*(..))")
+    public void loggingJoinPointDetails(JoinPoint joinPoint) {
+        System.out.println(joinPoint.getSignature());
+        System.out.println(joinPoint.getArgs());
+    }
+
 
 }

@@ -7,7 +7,7 @@ import java.io.IOException;
 @Service
 public class UserService {
 
-    public void addUser() {
+    public void addUser(User user) {
 
         System.out.println("Adding New User");
     }
