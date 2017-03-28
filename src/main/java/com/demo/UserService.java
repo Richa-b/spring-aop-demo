@@ -2,6 +2,8 @@ package com.demo;
 
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+
 @Service
 public class UserService {
 
@@ -27,6 +29,18 @@ public class UserService {
 
     }
 
+
+    public void methodWithException() {
+
+        // After Throwing advice wont be called in this case
+        try {
+
+            throw new IOException();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
 }

@@ -42,4 +42,11 @@ public class LoggingAspect {
     }
 
 
+    @AfterThrowing(value = "execution(* *.methodWithException())", throwing = "exception")
+    public void logAfterReturning(JoinPoint joinPoint, Throwable exception) {
+        System.out.println("In After Throwing Advice");
+
+    }
+
+
 }
