@@ -11,6 +11,7 @@ public class SpringAOPMain {
         UserService userService = context.getBean(UserService.class);
         userService.addUser();
         userService.deleteUser();
+        userService.getUser();
         userService.methodWIthAnnotation();
     }
 }

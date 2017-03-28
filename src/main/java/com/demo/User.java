@@ -13,6 +13,11 @@ public class User {
         return firstName;
     }
 
+    User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -47,5 +52,9 @@ public class User {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    public String toString() {
+        return firstName + " " + lastName;
     }
 }

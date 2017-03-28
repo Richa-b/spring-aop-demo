@@ -16,9 +16,17 @@ public class UserService {
         System.out.println("Removing existing User");
     }
 
+
+    public User getUser() {
+        System.out.println("Removing existing User");
+        return new User("A", "B");
+    }
+
     @Deprecated
-    public void methodWIthAnnotation(){
+    public void methodWIthAnnotation() {
 
     }
+
+
 
 }

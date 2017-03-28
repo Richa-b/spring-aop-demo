@@ -1,10 +1,7 @@
 package com.demo;
 
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 
 @Aspect
 public class LoggingAspect {
@@ -26,19 +23,23 @@ public class LoggingAspect {
 
 
     @Before("annotatedWithAnnotation()")
-    public void logBeforeAnnotatedMethods(JoinPoint joinPoint){
+    public void logBeforeAnnotatedMethods(JoinPoint joinPoint) {
         System.out.println("logBeforeAnnotatedMethods() is running!");
         System.out.println("hijacked : " + joinPoint.getSignature().getName());
         System.out.println("******");
     }
 
     @Pointcut("@annotation(java.lang.Deprecated)")
-    private void annotatedWithAnnotation(){
+    private void annotatedWithAnnotation() {
 
     }
 
+    @AfterReturning(value = "execution(* *.getUser())", returning = "returnedValue")
+    public void logAfterReturning(JoinPoint joinPoint, User returnedValue) {
+        System.out.println("In After Returning Advice");
+        System.out.println("returned Value::" + returnedValue);
 
-
+    }
 
 
 }
